@@ -1,0 +1,247 @@
+
+=================
+Agile with JIRA
+=================
+
+=> SDLC means software development life cycle
+
+=> SDLC represents the process of software project development from starting to ending.
+
+=> SDLC contains several phases
+
+	- Requirements Gathering
+	- Requirements Analysis
+	- Designing
+	- Development
+	- Testing
+	- Deployment
+	- Support
+
+=> In SDLC several methodologies
+
+		a) waterfall (outdated)
+		b) agile (trending)
+
+================
+Waterfall Model	
+================
+
+=> It is linear model / Sequential model
+
+=> Work will be completed step by step
+
+=> After one stage completed then only move to next stage
+
+=> It supports only forward direction
+
+=> Requirements fixed & budget fixed
+
+=> Client involment is very less 
+
+=> Client will see project only at the end
+
+=> If client is not happy with project then money will be wasted and time will be wasted.
+
+##### To overcome challenges of waterfall model, industry is using Agile Model now a days #####
+
+==============
+Agile Model
+==============
+
+=> Agile is an iterative approach to develop and deliver software applications to client.
+
+=> In Agile model (planning + development + testing + deployment ) is a continuos process.
+
+=> Project functionalitiy will be divided into multiple sprints/releases.
+
+Ex: Client has given 100 requirements
+
+	Sprint-1 : 30 requirements (plan + develop + test + deliver + take feedback)
+
+	Sprint-2 : 30 requirements (plan + develop + test + deliver + take feedback)
+
+	Sprint-3 : 30 requirements (plan + develop + test + deliver + take feedback)
+
+	Sprint-4 : 10 requirements (plan + develop + test + deliver + take feedback)
+
+
+=> Client feedback is very important/critical is Agile model.
+
+=> Client involvement is also high in agile model.
+
+=> Requirements & Budget is not fixed in Agile.
+
+============
+Agile Team
+============
+
+1) Product Owner  : Responsible for client deliverables.
+
+2) Scrum Master : Responsible to manage the agile team.
+
+		- Manage JIRA
+		- Assign the tasks in JIRA
+		- Follow up the work status with team
+		- Identify issues in team
+
+3) Tech Lead : Responsible for solving technical challenges.
+
+4) Team members : developers + testers 
+
+Note: Industry standard agile team size is 7 to 10 only.
+
+=> One project can have multiple agile teams also.
+
+=> Every agile team will have one tech lead & one scrum master.
+
+
+==================
+Agile Terminology
+==================
+
+1) Backlog Grooming
+
+2) Story & Story Points
+
+3) Sprint Planning
+
+4) Sprint
+
+5) Scrum
+
+6) Retrospective
+
+
+
+=> Backlog grooming is a meeting in which we will discuss pending works in the project.
+
+=> For every pending work, one story will be created in jira. All team members can create stories in JIRA Backlog.
+
+=> For every story we will assign story points.
+
+=> Story points represents duration to complete the story.
+
+			1 day  -> 3 points
+
+			2 days -> 5 points
+
+			3 days -> 8 points
+
+=> Sprint Planning is a meeting in which we will discuss about priority stories to complete.	
+
+Note: Industry standard for sprint duration is 2 weeks of time.
+
+=> Sprint means fixed set of stories targeted to be completed in sprint duration.
+
+=> During sprint, every day scrum call will be there.
+
+=> Scrum call is a meeting in which we will discuss agile team work updates.
+
+			1) What i am doing today (story detail)
+			2) When my story will be completed
+			3) Any challenges i am facing to complete
+
+Note: Every team member should give above updates to scrum master in scrum call on daily basis.
+
+Note: If you are not available to join scrum then send your work updates to the scrum master in email.
+
+=> Retrospective is a meeting in which agile team will discuss about prevous sprints.
+
+=> Retro is like a review meeting. in retro we will discuss
+
+		- what went well
+		- what went wrong
+		- lessons learnt
+		- new ideas
+
+Note: Retro happens monthly once.
+
+==============================
+JIRA (Project Mgmt Software)
+==============================
+
+=> JIRA S/w developed by Atlasian company.
+
+=> JIRA is a commercial software (we can use trial version).
+
+=> JIRA is used as project mgmt s/w...
+
+		- create stories for pending works
+		- assign stories to team members
+		- change story status
+		- sprint reports
+		- project tracking
+		- bug reporting
+
+
+#### URL To Use Jira : https://id.atlassian.com/login
+
+1) Login into jira (scrum template)
+
+2) Create Project
+
+3) Create Stories in backlog
+
+4) Assign Story Points
+
+5) Sprint planning (move stories from backlog to sprint)
+
+6) Assign Story and change story status
+
+7) once story completed, add comment and change story status
+
+8) Give your stories update in scrum call.
+
+
+============ Sending workupdate in email========================
+
+Subject : Scrum Update | Ashok Bollepalli
+
+Hi Steve,
+
+Greetings for the day..!!
+
+Today i am unable to join scrum call due to my person work.
+
+Please find by work status below
+
+I am working on story AA-7897 (IN Progress)
+
+This is targeted for tomorrow.
+
+I don't have any issues to complete my story.
+
+Thanks,
+Ashok.
+
+================= Sending Leave Request email ====================
+
+Subject : OOO Request | Ashok Bollepalli
+
+Hi Steve,
+
+Greetings for the day..!!
+
+I will be OOO from 10-Mar to 14-March due to function at home..
+
+Kindly approve my leave request...
+
+Thanks,
+Ashok.
+
+================== Jenkins Pipeline Request ====================
+
+To : ecomm.devops@tcs.com
+
+Subject : Jenkins Pipeline Creation Request | AA-5
+
+Hi DevOps Team,
+
+Please create jenkins cicd pipeline for 'Orders' microservices.
+
+Git Hub Repo : <url>
+
+@manager : Kindly approve this request.
+
+Thanks,
+Ashok.
