@@ -1,0 +1,38 @@
+What is CI/CD ?
+CI/CD is a design practice used to:
+
+Automate and improve the process of software delivery
+Allow software to be developed to a higher standard and easily packaged and deployed to test and production environments
+
+Why is CI/CD important ?
+CI/CD results in the ability to rapidly and repeatedly push out new features and enhancements or bug fixes with minimal manual overhead. 
+CI/CD pipeline helps automate steps in your software delivery process, such as initiating code builds, running automated tests, and deploying to a staging or production environment.
+
+Remove manual errors, provide standardized development feedback loops and enable fast product iterations.
+
+
+Approach
+
+Continuous Integration
+**********************
+Developers merge their changes back to the main branch as often as possible.
+Changes are validated by creating a build and running automated tests against the build.
+Analysis run against the code to find bugs, vulnerabilities etc.
+
+
+Continuous Delivery
+*******************
+An extension of continuous integration to make sure that new changes can be released quickly in a sustainable way.
+Automates the release process and can deploy an application at any point of time by clicking on a button.
+
+Continuous Deployment
+*********************
+Deployment pipelines are triggered automatically for every change.
+Automated functional/regression tests run on the deployed application in QA Environments.
+Ability to rollback in a single click if the application doesn't pass validations.
+Realtime application monitoring and alerts.
+
+CI/CD Pipeline
+**************
+Automate steps in the software delivery process such as initiating code builds, running automated tests & deploying to a staging or production environment.
+eCP CI/CD uses XL Release or CI Pipeline as orchestrators.

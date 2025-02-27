@@ -1,0 +1,292 @@
+IBI- information builders inc
+BI tool-
+statement/report geeneration process:
+1. GIDM (report setups)- if report setups=y- if transactions=y- then statement trigger
+2. MSSU creates RRID and loads into IBI
+3. IBI- RRIDs get processed-
+4. CIW SAN- $ cd /san/CIW/prod/CIWDATA/INTL/Singapore/PROD162/A403133162- CIW ETL-
+5. CIW WEB
+1. GIDM (report setups)- if report setups=y- if transactions=y- then statement trigger
+2. MSSU creates RRID and loads into IBI
+3. IBI- RRIDs get processed-
+4. CIW SAN- $ cd /san/CIW/prod/CIWDATA/INTL/Singapore/PROD162/A403133162- CIW ETL-
+5. GMIP homepage
+GDR- global data repository
+CIW- card info web
+GDR IDL- gdr India data localization
+select *  from tetlx00.T3121_RPT_REQ_CHK where rpt_req_id IN ('764580594')
+TETLX00STG.T3121_RPT_REQ_CHK_ARCH
+PROC_STA_CD
+I- initialized
+P- processing/pending
+R- Run/processed
+E - Error
+
+Intro
+======
+
+User wants reporting porta to understand what all transactions for last month or an month.
+
+Example 
+======
+
+Atos is having one corporate ID i.e., CID and atos will be having one PA, Who will be reporting porgramme administrator of that organization.
+
+If any issue is happending with some of the templates. They will be to going to CPPs. (Customer Care Professionals)
+
+CCP's will come and raise the INC's for us.
+
+I want statement of the last month. What are all transactions happended so I feel like this tranctions not happend. so at that time that might PA) we will go ccp and this transaction is not happended.
+
+Then CCP's, They will raise incident with details.
+
+Greg
+====
+The main purpose is to maintain individuals for corporate services.
+
+All access & permissions will be given in GREG.
+
+GIDM - Global information delivery management
+=============================================
+
+GIDM is used to setup for client profile, report related information will be there at the organizaion level.
+
+We can see the report setup on GIDM screen based permissions.
+
+If you have online permissions you will have BTA statements. in this you need control accounts or card account anything is required.
+
+CID - 9 digits ( 3 digits market and 6 digits market code)
+Card account 15 digits
+GUID - 16 digits
+
+When you cick on submit, it will interact with GCCP database and GDR database.
+
+GCCP db fetch from contro accounts details and it will validate whether the profile is having control account linkage & few validation.
+
+GDR DB fetches from card account details like transaction data.
+
+OU - BU - Reporting Group - CID - MCA - ICA - BCA - Card accounts.
+
+CID concept will be there in all the application.
+
+OU & BU Concept will be there in GIDM.
+
+GIDM moved to AuthBlue version. Till it was supported by SSO.
+
+Reason: 
+======
+	Business want Auth version. (Without credentials once you logged in)
+	Greg and GIDM Auth versions.
+	
+	
+Japan BTA statements - OS60001 -- which came in recently for Japan market users.
+
+My Data:
+=======
+A few of the templates were moved from GIDM to MyDATA.
+
+How my-data is disabing this GR templates
+=========================================
+They were not deploying the code. They are diable the template in GIDM and make it enable in my data end. They are just doing vault-configuration changes.
+
+and restarting the pod in both POD & POA projects
+
+
+What difference blw BU & reporting BU
+=====================================
+
+BU --> BU Can have only CID's attached it.
+==
+
+Reporting BU --> Reporting BU can have CID's or all control accounts are attached it.
+============
+
+
+SAN
+===
+
+SAN is a File Mounted system.
+
+In CIW, we have pdf and excel format. From where it is coming means SAN.
+
+SAN is a File Server System that all the CIW and reporting will be available.
+
+How it creates folders
+======================
+
+It will create floder structure based on primary market of the user and depend on Contact ID. It will be unique to everyone.
+
+My fies will go & upload in SAN location. When I go to CIW, to view files it will available.
+
+SAN access denied, given by CIW ETL will provide SAN path to the user.
+
+
+Recipient Maintenance
+=====================
+The OU & BU ID information will be sink with RMF system. Green system (GIS central team have that green system.)
+
+OU, BU and Recipient ID these three information will be coming from RMF - database and it wil retrival or viewable at GIDM end.
+
+GDR,GCCP and mainframe - These are three interfacing teams for GIDM which we use.
+
+Main tables
+===========
+
+For creating report-setup that table which we use GIDM end is 1360 & 1361.
+
+--> CID or any control account details required then 1870 (client group table is require).
+
+1360 & 1361 --> report version tables
+
+Which is required for report setup.
+
+
+Cycle - 9 
+=========
+I have created report set-up for cycle-cut 9. so by the next month/ cycle-9 depending on delivery method.
+
+MSSU ETL 
+========
+It will Scan any data required for cycle-9 and 1360 & 1361 table. they will pick all the data they will start picking entry and created RRID's (report request id's)
+
+
+IBI - Information builder INC
+=============================
+IBI is a batch reporting, where statements and reports were being delivery in batch like every month and quater based on the frequery of the user selection.
+
+RusGovernor, start getting request ID. They wil start processing this request.
+
+How they process in IBI
+=======================
+
+They will check whether it is pdf or xls required. depending on that they will take the data from GDR and prepare the sheet.
+
+Once sheet is done, they will be pushing it to SAN.
+
+If the entry is available in SAN then user is able to view the statement.
+
+rpt-req_chk 
+rpt_req_arch
+
+Who will be pushing it be SAN
+=============================== 
+CIW ETL will be pusing it to SAN.
+
+
+Same process happending for standard reporting also.
+
+pushing it SAN reporting end they start viewing the reports.
+
+Available reports, in this category they will start viewing the reports. once report is ready in SAN.
+
+
+Reporting API
+=============
+Reporting API, is the API which will used to upoad & download the file.
+
+
+Once process is done at IBI end. Reporting API push it to SAN.
+
+Reporting API picks from SAN.
+
+
+---> Standard reports we are pulling from CIW database, throught reporting API.
+
+GMIP Homepage
+=============
+
+GMIP is go live with interaction of GCCP DB, 
+
+What is contact id 
+What is recipient id
+What is web user ID
+
+
+It it correct or not will take the data from 1077 table.
+
+Contact table will give the data.
+
+CIW, whenever user is accessing reports when click on table.
+
+web_trans_table  -- 120-day deactivation rule.
+
+Report setup will be deactivated, if user is not accessing more than 120 days.
+
+select file_name, insert_ts from TCLID01.CIW_WEB_TRANS_STAGING where recip_id='1120219' and file_name like '%GR-2016%'
+
+
+Basic table of CIW is "DFF_user"
+
+GCCP contact table information will available in 1077 table.
+
+For standard_reporting
+======================
+RPT_Req
+RPT_LIST
+
+GMIP Landing page will ave interaction with GCCP database, CIW database.
+
+Hierarachy page will have interaction with prefetch database
+
+From where reports are coming that will come GDR database.
+
+Any of template data, you wil get data from GDR database.
+
+
+User (Profile) information wil come from GCCP and transaction will come GDR database.
+
+Tables
+------
+1.Recipient_Access_Hierarachy 
+2.Card_account table
+3. Client_group table
+
+
+Depending on report query will change.
+
+I am using Card member report, I will have different report setup.
+
+Issue only we taking the query and we analyize the data.
+
+How the report generate
+----------------------
+
+The report will get generate from GDR, MSTR developer tool will make it in a human readable format.
+
+(Like report viewable format)
+
+IBI is tool, make it a fashion to the report. Like that MSTR is another tool whic is make it human readable format.
+
+MSTR developer tool
+===================
+
+It is help us to fetch data from GDR end, Like attributes.
+
+Micro-strategy or reporting tool components have specific engines to generate SQL statements & to do calcuations & to do message queuing priorization jobs and exectuting in manner and get it sequence those kind stuff.
+
+Reprint
+======
+servers
+=======
+
+
+
+
+
+ 
+How the issue is cirmenting after restart server
+================================================
+
+MSTR is not a small appication. It is fetching the data in laksh so sometimes they are just clearing cache in order to make it clear in a proper formation. 
+
+It just clearning like any memory issues (out_of_memory_exceptions) in order to have the memory issues we are restarting ther servers.
+
+
+
+
+
+
+
+
+
+
